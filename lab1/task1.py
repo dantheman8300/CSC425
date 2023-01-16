@@ -3,9 +3,9 @@ from Crypto.Cipher import ARC4
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Random import get_random_bytes
 
-key_AES = get_random_bytes(16)
+key_AES = bytes([255] * 16)
 iv_AES = get_random_bytes(16)
-key_ARC4 = get_random_bytes(5)
+key_ARC4 = bytes([255] * 5)
 
 def encrypt_AES(plaintext: bytes) -> bytes:
   paddedPlainText: bytes = pad(plaintext, 16)
